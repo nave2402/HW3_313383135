@@ -25,8 +25,6 @@ def read_line(n=None, file=None):
 # Task 2
 def longest_words(file=None):
     try:
-        if type(file) != type(str()):
-            return "invalid input detected"
         word_len = dict()
         lines = []
         words_list = []
@@ -42,9 +40,10 @@ def longest_words(file=None):
                 word_len[keys] = len(keys)
         return sorted(word_len, key=word_len.get, reverse=True)[:5]
     except:
-        return "file not found"
+        return f"file not found\n{words_list}"
 
 
-# print(longest_words("ex3_text.txt"))
+# print(longest_words("ex4_text.txt"))
+
 
 
